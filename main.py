@@ -1,17 +1,16 @@
 from fastapi import FastAPI, Query
-from fastapi.middleware.cors import CORSMiddleware
-from scraper import compare_products
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-@app.get("/compare/")
+@app.get("/compare/", response_class=HTMLResponse)
 def compare(query: str = Query(...)):
-    return {"results": compare_products(query)}
+    return f"""
+    <html>
+        <head><title>Prueba</title></head>
+        <body>
+            <h1>¡Funciona Jorge! 🎉</h1>
+            <p>Tu búsqueda fue: <strong>{query}</strong></p>
+        </body>
+    </html>
+    """
