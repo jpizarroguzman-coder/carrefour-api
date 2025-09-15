@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-@app.get("/compare/", response_class=HTMLResponse)
+@app.get("/compare", response_class=HTMLResponse)
 def compare(query: str = Query(...)):
     return f"""
     <html>
