@@ -9,7 +9,7 @@ def compare(query: str = Query(...)):
     <html>
         <head><title>Prueba</title></head>
         <body>
-            <h1>¡Funciona Jorge! 🎉</h1>
+            <h1>¡Funciona Jorge! 🧠✔️</h1>
             <p>Tu búsqueda fue: <strong>{query}</strong></p>
         </body>
     </html>
